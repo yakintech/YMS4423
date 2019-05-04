@@ -13,7 +13,7 @@ namespace BilgeAdam.Business.Manager
         //List<AdminUser> admindb.AdminUsers.ToList();
         //AdminUser ları getiren metot
 
-        public List<AdminUser> GetAllAdminUsers()
+        public static List<AdminUser> GetAllAdminUsers()
         {
             using (BilgeAdamContext db = new BilgeAdamContext())
             {
