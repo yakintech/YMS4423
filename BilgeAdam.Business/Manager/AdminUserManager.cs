@@ -21,5 +21,22 @@ namespace BilgeAdam.Business.Manager
             }
         }
 
+        public static void AddAdminUser(AdminUser adminuser)
+        {
+            using (BilgeAdamContext db = new BilgeAdamContext())
+            {
+                adminuser.InsertedUserID = 1;
+                adminuser.UpdatedUserID = 1;
+                adminuser.AddDate = DateTime.Now;
+                adminuser.IsDeleted = false;
+                adminuser.UpdateDate = DateTime.Now;
+
+                db.AdminUsers.Add(adminuser);
+
+                db.SaveChanges();
+
+            }
+        }
+
     }
 }

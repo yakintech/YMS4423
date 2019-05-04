@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+@model BilgeAdam.UI.Web.Models.VM.AdminUserVM
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddAdminUser</title>
+</head>
+<body>
+    <div> 
+        @Html.ValidationSummary()
+        <form action="/AdminUser/AddAdminUser" method="post">
+            <div>
+                @Html.LabelFor(q => q.EMail)
+                @Html.TextBoxFor(q => q.EMail)
+                @Html.ValidationMessageFor(q => q.EMail)
+            </div>
+            <div>
+                @Html.LabelFor(q => q.Password)
+                @Html.PasswordFor(q => q.Password)
+            </div>
+            <div>
+                @Html.LabelFor(q => q.ConfrimPassword)
+                @Html.PasswordFor(q => q.ConfrimPassword)
+            </div>
+            <div>
+                <input type="submit" name="name" value="Kayıt" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>
