@@ -52,16 +52,32 @@
     <Compile Include="Migrations\201905040918429_AdminUserCreate.Designer.cs">
       <DependentUpon>201905040918429_AdminUserCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905050807388_ProductandCategoryCreate.cs" />
+    <Compile Include="Migrations\201905050807388_ProductandCategoryCreate.Designer.cs">
+      <DependentUpon>201905050807388_ProductandCategoryCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905050810289_ProductForeingKey.cs" />
+    <Compile Include="Migrations\201905050810289_ProductForeingKey.Designer.cs">
+      <DependentUpon>201905050810289_ProductForeingKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ORM\Context\BilgeAdamContext.cs" />
     <Compile Include="ORM\Entity\AdminUser.cs" />
     <Compile Include="ORM\Entity\Base.cs" />
+    <Compile Include="ORM\Entity\Category.cs" />
+    <Compile Include="ORM\Entity\Product.cs" />
     <Compile Include="ORM\Interfaces\IUserLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905040918429_AdminUserCreate.resx">
       <DependentUpon>201905040918429_AdminUserCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905050807388_ProductandCategoryCreate.resx">
+      <DependentUpon>201905050807388_ProductandCategoryCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905050810289_ProductForeingKey.resx">
+      <DependentUpon>201905050810289_ProductForeingKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
