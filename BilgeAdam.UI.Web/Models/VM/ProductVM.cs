@@ -16,5 +16,6 @@ namespace BilgeAdam.UI.Web.Models.VM
         public string KategoriAd { get; set; }
 
         public string FiyatTL { get; set; }
+
     }
 }
