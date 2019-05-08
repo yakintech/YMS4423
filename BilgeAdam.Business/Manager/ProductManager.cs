@@ -136,6 +136,15 @@ namespace BilgeAdam.Business.Manager
             }
         }
 
+        //IsDeleted'ı false olan tüm ürünleri getirme
+        public static List<Product> IsDeletedFalse(bool isDeleted)
+        {
+            using (BilgeAdamContext db = new BilgeAdamContext())
+            {
+                return db.Products.OrderBy(x => x.IsDeleted == false ).ToList();
+            }
+        }
+
 
 
     }
