@@ -61,12 +61,17 @@
     <Compile Include="Migrations\201905050810289_ProductForeingKey.Designer.cs">
       <DependentUpon>201905050810289_ProductForeingKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905110937565_SupplierCreate.cs" />
+    <Compile Include="Migrations\201905110937565_SupplierCreate.Designer.cs">
+      <DependentUpon>201905110937565_SupplierCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ORM\Context\BilgeAdamContext.cs" />
     <Compile Include="ORM\Entity\AdminUser.cs" />
     <Compile Include="ORM\Entity\Base.cs" />
     <Compile Include="ORM\Entity\Category.cs" />
     <Compile Include="ORM\Entity\Product.cs" />
+    <Compile Include="ORM\Entity\Supplier.cs" />
     <Compile Include="ORM\Interfaces\IUserLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -79,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905050810289_ProductForeingKey.resx">
       <DependentUpon>201905050810289_ProductForeingKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905110937565_SupplierCreate.resx">
+      <DependentUpon>201905110937565_SupplierCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
