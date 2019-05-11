@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+@model BilgeAdam.UI.Web.Models.VM.UrunVM
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UrunEkle</title>
+</head>
+<body>
+    <form action="/Product/UrunEkle" method="post">
+
+        <div>
+            <label>Kategoriler: </label>
+            @Html.DropDownList("CategoryID", Model.drpKategoriler)
+        </div>
+        <div>
+            @Html.LabelFor(q => q.Ad)
+            @Html.TextBoxFor(q => q.Ad)
+        </div>
+        <div>
+            @Html.LabelFor(q => q.Fiyat)
+            @Html.TextBoxFor(q => q.Fiyat)
+          
+        </div>
+        <div>
+            <input type="submit" name="name" value="Kayıt" />
+        </div>
+
+
+    </form>
+
+
+
+</body>
+</html>

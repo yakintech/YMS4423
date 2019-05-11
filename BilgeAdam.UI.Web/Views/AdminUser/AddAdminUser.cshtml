@@ -18,6 +18,8 @@
                 @Html.LabelFor(q => q.EMail)
                 @Html.TextBoxFor(q => q.EMail)
                 @Html.ValidationMessageFor(q => q.EMail)
+
+                @Html.DropDownList("",)
             </div>
             <div>
                 @Html.LabelFor(q => q.Password)
@@ -27,6 +29,10 @@
                 @Html.LabelFor(q => q.ConfrimPassword)
                 @Html.PasswordFor(q => q.ConfrimPassword)
             </div>
+
+
+            @Html.DropDownList("",)
+
             <div>
                 <input type="submit" name="name" value="Kayıt" />
             </div>

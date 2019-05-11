@@ -103,7 +103,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\VM\AdminUserVM.cs" />
+    <Compile Include="Models\VM\KategoriDrpVM.cs" />
     <Compile Include="Models\VM\ProductVM.cs" />
+    <Compile Include="Models\VM\UrunVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +113,7 @@
     <None Include="packages.config" />
     <Content Include="Views\AdminUser\Index.cshtml" />
     <Content Include="Views\AdminUser\AddAdminUser.cshtml" />
+    <Content Include="Views\Product\UrunEkle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -120,7 +123,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BilgeAdam.Business\BilgeAdam.Business.csproj">

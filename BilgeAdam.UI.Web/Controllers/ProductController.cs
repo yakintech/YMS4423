@@ -43,5 +43,43 @@ namespace BilgeAdam.UI.Web.Controllers
 
             return View(model);
         }
+
+
+        [HttpGet]
+        public ActionResult UrunEkle()
+        {
+            return View(GetUrunVM());
+        }
+
+        [HttpPost]
+        public ActionResult UrunEkle(UrunVM model)
+        {
+            return View(GetUrunVM());
+
+        }
+
+        private UrunVM GetUrunVM()
+        {
+            List<Category> categories = CategoryManager.GetAllCategories();
+
+            List<SelectListItem> items = new List<SelectListItem>();
+
+            foreach (var item in categories)
+            {
+                SelectListItem selectitem = new SelectListItem();
+                selectitem.Text = item.CategoryName;
+                selectitem.Value = item.ID.ToString();
+
+
+                items.Add(selectitem);
+            }
+
+
+            UrunVM model = new UrunVM();
+            model.drpKategoriler = items;
+
+            return model;
+        }
+
     }
 }
