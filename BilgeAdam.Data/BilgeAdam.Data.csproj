@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201905110937565_SupplierCreate.Designer.cs">
       <DependentUpon>201905110937565_SupplierCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905120921575_WebUserCreate.cs" />
+    <Compile Include="Migrations\201905120921575_WebUserCreate.Designer.cs">
+      <DependentUpon>201905120921575_WebUserCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ORM\Context\BilgeAdamContext.cs" />
     <Compile Include="ORM\Entity\AdminUser.cs" />
@@ -72,6 +76,7 @@
     <Compile Include="ORM\Entity\Category.cs" />
     <Compile Include="ORM\Entity\Product.cs" />
     <Compile Include="ORM\Entity\Supplier.cs" />
+    <Compile Include="ORM\Entity\WebUser.cs" />
     <Compile Include="ORM\Interfaces\IUserLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905110937565_SupplierCreate.resx">
       <DependentUpon>201905110937565_SupplierCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905120921575_WebUserCreate.resx">
+      <DependentUpon>201905120921575_WebUserCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

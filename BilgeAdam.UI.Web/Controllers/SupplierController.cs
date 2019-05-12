@@ -3,17 +3,23 @@ using BilgeAdam.Data.ORM.Entity;
 using BilgeAdam.UI.Web.Models.VM;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace BilgeAdam.UI.Web.Controllers
 {
-    public class SupplierController : Controller
+    public class SupplierController : BaseController
     {
 
         public ActionResult Index()
         {
+            //int year = DateTime.Now.Year;
+            //int month = DateTime.Now.Month;
+            //int day = DateTime.Now.Day;
+
+
             List<SupplierVM> model = new List<SupplierVM>();
 
             List<Supplier> suppliers = SupplierManager.GetAllSuppliers();
@@ -21,9 +27,11 @@ namespace BilgeAdam.UI.Web.Controllers
 
             foreach (var item in suppliers)
             {
+                //new CultureInfo("en-US")
                 SupplierVM svm = new SupplierVM();
                 svm.ID = item.ID;
-                svm.AddDate = item.AddDate;
+                svm.AddDate = item.AddDate.ToString("dd MMMM yyyy dddd", new CultureInfo("tr-TR"));
+               // svm.AddDate = item.AddDate.ToString("dddd, dd MMMM yyyy");
                 svm.Aciklama = item.Description;
                 svm.SirketAd = item.CompanyName;
 

@@ -18,6 +18,6 @@ namespace BilgeAdam.UI.Web.Models.VM
 
         public string Aciklama { get; set; }
 
-        public DateTime AddDate { get; set; }
+        public string AddDate { get; set; }
     }
 }

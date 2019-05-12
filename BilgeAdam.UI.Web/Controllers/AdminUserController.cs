@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace BilgeAdam.UI.Web.Controllers
 {
-    public class AdminUserController : Controller
+    public class AdminUserController : BaseController
     {
         public ActionResult Index()
         {

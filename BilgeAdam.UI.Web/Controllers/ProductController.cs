@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace BilgeAdam.UI.Web.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         //Ürünün adı,  fiyatı, eklenme tarihi ve kategorisinin adı
         public ActionResult Index()

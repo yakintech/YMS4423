@@ -17,5 +17,6 @@ namespace BilgeAdam.Data.ORM.Entity
         public DateTime? DeleteDate { get; set; }
 
         public bool IsDeleted { get; set; }
+
     }
 }

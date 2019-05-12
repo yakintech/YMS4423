@@ -27,5 +27,7 @@ namespace BilgeAdam.Data.ORM.Context
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Supplier> Suppliers { get; set; }
+
+        public DbSet<WebUser> WebUsers { get; set; }
     }
 }

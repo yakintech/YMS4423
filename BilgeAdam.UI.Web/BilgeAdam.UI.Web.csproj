@@ -98,16 +98,21 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminUserController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
+    <Compile Include="Controllers\WebUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\VM\AdminUserVM.cs" />
     <Compile Include="Models\VM\KategoriDrpVM.cs" />
+    <Compile Include="Models\VM\LoginVM.cs" />
     <Compile Include="Models\VM\ProductVM.cs" />
     <Compile Include="Models\VM\SupplierVM.cs" />
     <Compile Include="Models\VM\UrunVM.cs" />
+    <Compile Include="Models\VM\WebUserVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +123,8 @@
     <Content Include="Views\Product\UrunEkle.cshtml" />
     <Content Include="Views\Supplier\AddSupplier.cshtml" />
     <Content Include="Views\Supplier\Index.cshtml" />
+    <Content Include="Views\WebUser\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -127,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BilgeAdam.Business\BilgeAdam.Business.csproj">
