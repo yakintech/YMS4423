@@ -10,6 +10,15 @@ namespace BilgeAdam.Business.Manager
 {
     public class SupplierManager
     {
+
+        public static List<Supplier> GetAllSuppliers()
+        {
+            using (BilgeAdamContext db = new BilgeAdamContext())
+            {
+                return db.Suppliers.Where(q => q.IsDeleted == false).ToList();
+            }
+        }
+
         public static void AddSupplier(Supplier supplier)
         {
             using (BilgeAdamContext db = new BilgeAdamContext())
@@ -20,6 +29,20 @@ namespace BilgeAdam.Business.Manager
 
                 db.Suppliers.Add(supplier);
                 db.SaveChanges();
+            }
+        }
+
+        public static void DeleteSupplier(int id)
+        {
+            using (BilgeAdamContext db = new BilgeAdamContext())
+            {
+                Supplier supplier = db.Suppliers.FirstOrDefault(q => q.ID == id);
+                if (supplier != null)
+                {
+                    supplier.IsDeleted = true;
+                    db.SaveChanges();
+                }
+
             }
         }
     }

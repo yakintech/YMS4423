@@ -117,6 +117,7 @@
     <Content Include="Views\AdminUser\AddAdminUser.cshtml" />
     <Content Include="Views\Product\UrunEkle.cshtml" />
     <Content Include="Views\Supplier\AddSupplier.cshtml" />
+    <Content Include="Views\Supplier\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
