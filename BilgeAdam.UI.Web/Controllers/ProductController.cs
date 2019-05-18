@@ -45,7 +45,6 @@ namespace BilgeAdam.UI.Web.Controllers
             return View(model);
         }
 
-
         [HttpGet]
         public ActionResult UrunEkle()
         {
@@ -81,7 +80,6 @@ namespace BilgeAdam.UI.Web.Controllers
 
             return model;
         }
-
 
         public JsonResult DeleteProduct(int id)
         {

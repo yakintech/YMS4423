@@ -1880,6 +1880,8 @@
     <Content Include="Views\Shared\SiteLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Shared\Partial\SiteLeftMenu.cshtml" />
+    <Content Include="Views\Shared\Partial\HeaderMenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
