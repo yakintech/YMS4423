@@ -25,7 +25,7 @@ namespace BilgeAdam.UI.Web.Controllers
                 pmodel.EklenmeTarih = item.AddDate;
                 pmodel.Fiyat = item.UnitPrice;
                 pmodel.FiyatTL = item.UnitPrice.ToString() + "TL";
-                pmodel.KategoriAd = item.Category?.CategoryName;
+                pmodel.KategoriAd = "elektronik";
                 pmodel.UrunAdi = item.ProductName;
 
 
@@ -35,11 +35,12 @@ namespace BilgeAdam.UI.Web.Controllers
 
             List<ProductVM> model = ProductManager.GetAllProducts().Select(q => new ProductVM()
             {
+                ID = q.ID,
                 UrunAdi = q.ProductName,
                 Fiyat = q.UnitPrice,
                 EklenmeTarih = q.AddDate,
-                KategoriAd = q.Category?.CategoryName
-            }).ToList();
+                KategoriAd = "elektronik"
+        }).ToList();
 
             return View(model);
         }
@@ -79,6 +80,13 @@ namespace BilgeAdam.UI.Web.Controllers
             model.drpKategoriler = items;
 
             return model;
+        }
+
+
+        public JsonResult DeleteProduct(int id)
+        {
+            ProductManager.DeleteProduct(id);
+            return Json("");
         }
 
     }

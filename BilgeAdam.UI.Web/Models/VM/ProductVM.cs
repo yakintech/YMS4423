@@ -7,6 +7,8 @@ namespace BilgeAdam.UI.Web.Models.VM
 {
     public class ProductVM
     {
+
+        public int ID { get; set; }
         public string UrunAdi { get; set; }
 
         public decimal Fiyat { get; set; }
