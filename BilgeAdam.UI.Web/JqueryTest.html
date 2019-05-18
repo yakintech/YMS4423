@@ -6,14 +6,42 @@
     <title></title>
 </head>
 <body>
-    <button>Hello</button>
-    <button>Hello - 2</button>
     <div>
-        <button>hello - 3</button>
+        <label>Ad</label>
+        <input type="text" id="ad" name="name" value="" />
     </div>
+
+    <div>
+        <label>Soyad</label>
+        <input type="text" id="soyad" name="name" value="" />
+    </div>
+
+    <div>
+        <label>Sehir</label>
+        <input type="text" id="sehir" value="" />
+    </div>
+
+    <button id="btnEkle">Ekle</button>
 </body>
 </html>
 <script>
-    $("button").click(function () {
-    }) 
+    $("#btnEkle").click(function () {
+
+        var Kisi = new Object();
+        Kisi.Name = $("#ad").val();
+        Kisi.SurName = $("#soyad").val();
+        Kisi.City = $("#sehir").val();
+
+        $.ajax({
+            url: "/AjaxOrnek/KisiEkle",
+            data: Kisi,
+            type: "POST",
+            success: function () {
+                alert("Kişi başarıyla eklendi");
+            }
+        })
+
+
+    })
 </script>
+

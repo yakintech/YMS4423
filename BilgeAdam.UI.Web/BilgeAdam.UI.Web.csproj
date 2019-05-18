@@ -1680,6 +1680,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminUserController.cs" />
+    <Compile Include="Controllers\AjaxOrnekController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -1691,6 +1692,7 @@
     </Compile>
     <Compile Include="Models\VM\AdminUserVM.cs" />
     <Compile Include="Models\VM\KategoriDrpVM.cs" />
+    <Compile Include="Models\VM\Kisi.cs" />
     <Compile Include="Models\VM\LoginVM.cs" />
     <Compile Include="Models\VM\ProductVM.cs" />
     <Compile Include="Models\VM\SupplierVM.cs" />
@@ -1887,6 +1889,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AjaxOrnek\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
