@@ -18,6 +18,7 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
+                        <th>Resim</th>
                         <th>Ürün Adı</th>
                         <th>Kategori</th>
                         <th>Fiyat</th>
@@ -38,6 +39,7 @@
                     @foreach (var item in Model)
                     {
                         <tr id="@item.ID" style="cursor:pointer">
+                            <td><img width="50" height="50" src="~/Content/img/uploadFiles/@item.ImgPath" alt="Alternate Text" /></td>
                             <td>@item.UrunAdi</td>
                             <td>@item.KategoriAd</td>
                             <td>@item.Fiyat</td>

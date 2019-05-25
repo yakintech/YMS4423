@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201905120921575_WebUserCreate.Designer.cs">
       <DependentUpon>201905120921575_WebUserCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905250949276_ProductUpdate.cs" />
+    <Compile Include="Migrations\201905250949276_ProductUpdate.Designer.cs">
+      <DependentUpon>201905250949276_ProductUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ORM\Context\BilgeAdamContext.cs" />
     <Compile Include="ORM\Entity\AdminUser.cs" />
@@ -95,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905120921575_WebUserCreate.resx">
       <DependentUpon>201905120921575_WebUserCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905250949276_ProductUpdate.resx">
+      <DependentUpon>201905250949276_ProductUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

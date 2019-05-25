@@ -3,6 +3,7 @@ using BilgeAdam.Data.ORM.Entity;
 using BilgeAdam.UI.Web.Models.VM;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -39,7 +40,8 @@ namespace BilgeAdam.UI.Web.Controllers
                 UrunAdi = q.ProductName,
                 Fiyat = q.UnitPrice,
                 EklenmeTarih = q.AddDate,
-                KategoriAd = "elektronik"
+                KategoriAd = "elektronik",
+                ImgPath = q.ImgPath
         }).ToList();
 
             return View(model);
@@ -52,8 +54,28 @@ namespace BilgeAdam.UI.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult UrunEkle(UrunVM model)
+        public ActionResult UrunEkle(UrunVM model,HttpPostedFileBase productfile)
         {
+            Product product = new Product();
+            product.ProductName = model.Ad;
+            product.UnitPrice = model.Fiyat;
+            product.CategoryID = model.CategoryID;
+         
+
+            if (productfile != null)
+            {
+                var x = Guid.NewGuid().ToString();
+                var filename =x +  productfile.FileName;
+
+                product.ImgPath = filename;
+
+                string dosyaYolu = Path.GetFileName(filename);
+                string yuklemeYeri = Path.Combine(Server.MapPath("~/Content/img/uploadFiles"), dosyaYolu);
+                productfile.SaveAs(yuklemeYeri);
+            }
+
+            ProductManager.AddProduct(product);
+
             return View(GetUrunVM());
 
         }

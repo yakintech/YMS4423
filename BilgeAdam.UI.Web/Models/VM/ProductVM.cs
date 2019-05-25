@@ -7,7 +7,6 @@ namespace BilgeAdam.UI.Web.Models.VM
 {
     public class ProductVM
     {
-
         public int ID { get; set; }
         public string UrunAdi { get; set; }
 
@@ -18,5 +17,8 @@ namespace BilgeAdam.UI.Web.Models.VM
         public string KategoriAd { get; set; }
 
         public string FiyatTL { get; set; }
+
+        public string ImgPath { get; set; }
+
     }
 }

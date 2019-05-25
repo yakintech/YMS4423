@@ -96,6 +96,8 @@
     <Content Include="Content\css\sb-admin-2.css" />
     <Content Include="Content\css\sb-admin-2.min.css" />
     <Content Include="Content\img\undraw_posting_photo.svg" />
+    <Content Include="Content\img\uploadFiles\6b231ca3-28f0-40c3-a39a-d9de58a38cd1koala.jpeg" />
+    <Content Include="Content\img\uploadFiles\koala.jpeg" />
     <Content Include="Content\js\demo\chart-area-demo.js" />
     <Content Include="Content\js\demo\chart-bar-demo.js" />
     <Content Include="Content\js\demo\chart-pie-demo.js" />

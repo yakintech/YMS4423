@@ -19,5 +19,8 @@ namespace BilgeAdam.UI.Web.Models.VM
 
         public List<SelectListItem> drpKategoriler { get; set; }
 
+
+
+
     }
 }

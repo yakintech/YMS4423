@@ -7,31 +7,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width" />
     <title>UrunEkle</title>
 </head>
 <body>
-    <form action="/Product/UrunEkle" method="post">
+    <h1>Ürün Ekle</h1>
+    <div class="container">
+        <form action="/Product/UrunEkle" method="post" enctype="multipart/form-data">
 
-        <div>
-            <label>Kategoriler: </label>
-            @Html.DropDownList("CategoryID", Model.drpKategoriler)
-        </div>
-        <div>
-            @Html.LabelFor(q => q.Ad)
-            @Html.TextBoxFor(q => q.Ad)
-        </div>
-        <div>
-            @Html.LabelFor(q => q.Fiyat)
-            @Html.TextBoxFor(q => q.Fiyat)
-          
-        </div>
-        <div>
-            <input type="submit" name="name" value="Kayıt" />
-        </div>
+            <div class="form-group">
+                <label>Kategoriler: </label>
+                @Html.DropDownList("CategoryID", Model.drpKategoriler, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(q => q.Ad)
+                @Html.TextBoxFor(q => q.Ad, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(q => q.Fiyat)
+                @Html.TextBoxFor(q => q.Fiyat, new { @class = "form-control" })
+
+            </div>
+            <div class="form-group">
+               <label>Ürün Resmi</label>
+                <input type="file" name="productfile" accept="image/x-png,image/gif,image/jpeg" /> 
+
+            </div>
+            <div>
+                <input type="submit" name="name" value="Kayıt" />
+            </div>
 
 
-    </form>
+        </form>
+    </div>
+ 
 
 
 

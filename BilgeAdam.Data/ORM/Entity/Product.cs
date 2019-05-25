@@ -17,5 +17,7 @@ namespace BilgeAdam.Data.ORM.Entity
 
         [ForeignKey("CategoryID")]
         public virtual Category Category { get; set; }
+
+        public string ImgPath { get; set; }
     }
 }
