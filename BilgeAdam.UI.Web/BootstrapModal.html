@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg btnModal" data-toggle="modal" data-target="#myModal" data-id="15">Open Modal</button>
+
+    <button type="button" class="btn btn-info btn-lg btnModal" data-toggle="modal" data-target="#myModal" data-id="16">Open Modal - 2</button>
+
+    <button type="button" class="btn btn-info btn-lg btnModal" data-toggle="modal" data-target="#myModal" data-id="17">Open Modal - 3</button>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+     $(document).on("click", ".btnModal", function () {
+         var id = $(this).data('id');
+
+
+
+         $(".modal-body p").text(id);
+});
+</script>

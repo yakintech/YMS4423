@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div style="text-align:center">
+        <p>Link 1</p>
+        <a data-toggle="modal" data-id="9999999999" title="Add this item" class="open-AddBookDialog btn btn-primary" href="#addBookDialog">test</a>
+
+        <p>&nbsp;</p>
+
+
+        <p>Link 2</p>
+        <a data-toggle="modal" data-id="8888888888" title="Add this item" class="open-AddBookDialog btn btn-primary" href="#addBookDialog">test</a>
+    </div>
+
+
+    <div class="modal hide" id="addBookDialog">
+        <div class="modal-header">
+            <button class="close" data-dismiss="modal">×</button>
+            <h3>Modal header</h3>
+        </div>
+        <div class="modal-body">
+            <p>some content</p>
+            <input type="text" name="bookId" id="bookId" value="" />
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(document).on("click", ".open-AddBookDialog", function () {
+     var myBookId = $(this).data('id');
+     $(".modal-body #bookId").val( myBookId );
+});
+</script>
