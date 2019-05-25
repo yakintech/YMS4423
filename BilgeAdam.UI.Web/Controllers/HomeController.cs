@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BilgeAdam.Business.Manager;
+using BilgeAdam.Data.ORM.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +10,12 @@ namespace BilgeAdam.UI.Web.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+       
         public ActionResult Index()
         {
+            GenericBilgeAdam<Category> genericbilgeadam = new GenericBilgeAdam<Category>();
+
+
             return View();
         }
     }
