@@ -1,4 +1,5 @@
 ﻿using BilgeAdam.Business.Manager;
+using BilgeAdam.Business.Repository;
 using BilgeAdam.Data.ORM.Entity;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,9 @@ namespace BilgeAdam.UI.Web.Controllers
        
         public ActionResult Index()
         {
-            GenericBilgeAdam<Category> genericbilgeadam = new GenericBilgeAdam<Category>();
+
+
+            GenericRepository<Product> gproduct = new GenericRepository<Product>();
 
 
             return View();

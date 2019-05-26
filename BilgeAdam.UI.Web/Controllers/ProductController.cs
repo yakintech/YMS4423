@@ -1,4 +1,5 @@
 ﻿using BilgeAdam.Business.Manager;
+using BilgeAdam.Business.Repository;
 using BilgeAdam.Data.ORM.Entity;
 using BilgeAdam.UI.Web.Models.VM;
 using System;
@@ -12,29 +13,31 @@ namespace BilgeAdam.UI.Web.Controllers
 {
     public class ProductController : BaseController
     {
+        GenericRepository<Product> productrepo = new GenericRepository<Product>();
+
         //Ürünün adı,  fiyatı, eklenme tarihi ve kategorisinin adı
         public ActionResult Index()
         {
             #region uzun
-            List<Product> products = ProductManager.GetAllProducts();
+            //List<Product> products = ProductManager.GetAllProducts();
 
-            List<ProductVM> model2 = new List<ProductVM>();
+            //List<ProductVM> model2 = new List<ProductVM>();
 
-            foreach (var item in products)
-            {
-                ProductVM pmodel = new ProductVM();
-                pmodel.EklenmeTarih = item.AddDate;
-                pmodel.Fiyat = item.UnitPrice;
-                pmodel.FiyatTL = item.UnitPrice.ToString() + "TL";
-                pmodel.KategoriAd = "elektronik";
-                pmodel.UrunAdi = item.ProductName;
+            //foreach (var item in products)
+            //{
+            //    ProductVM pmodel = new ProductVM();
+            //    pmodel.EklenmeTarih = item.AddDate;
+            //    pmodel.Fiyat = item.UnitPrice;
+            //    pmodel.FiyatTL = item.UnitPrice.ToString() + "TL";
+            //    pmodel.KategoriAd = "elektronik";
+            //    pmodel.UrunAdi = item.ProductName;
 
 
-                model2.Add(pmodel);
-            }
+            //    model2.Add(pmodel);
+            //}
             #endregion
 
-            List<ProductVM> model = ProductManager.GetAllProducts().Select(q => new ProductVM()
+            List<ProductVM> model = productrepo.GetAll().Select(q => new ProductVM()
             {
                 ID = q.ID,
                 UrunAdi = q.ProductName,

@@ -14,6 +14,7 @@ namespace BilgeAdam.Business.Manager
         {
             using (BilgeAdamContext db = new BilgeAdamContext())
             {
+
                 return db.Categories.Where(q => q.IsDeleted == false).ToList();
             }
         }

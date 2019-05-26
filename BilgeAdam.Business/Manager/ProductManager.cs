@@ -11,13 +11,13 @@ namespace BilgeAdam.Business.Manager
 {
     public class ProductManager
     {
-        public static List<Product> GetAllProducts()
-        {
-            using (BilgeAdamContext db = new BilgeAdamContext())
-            {
-                return db.Products.Where(q => q.IsDeleted == false).ToList();
-            }
-        }
+        //public static List<Product> GetAllProducts()
+        //{
+        //    using (BilgeAdamContext db = new BilgeAdamContext())
+        //    {
+        //        return db.Products.Where(q => q.IsDeleted == false).ToList();
+        //    }
+        //}
 
         public static void AddProduct(Product product)
         {

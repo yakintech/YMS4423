@@ -8,6 +8,7 @@ namespace BilgeAdam.Business.Manager
 {
     public class GenericBilgeAdam<T>
     {
+
         public void Add(T entity)
         {
             

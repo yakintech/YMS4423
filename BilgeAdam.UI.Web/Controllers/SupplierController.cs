@@ -1,4 +1,5 @@
 ﻿using BilgeAdam.Business.Manager;
+using BilgeAdam.Business.Repository;
 using BilgeAdam.Data.ORM.Entity;
 using BilgeAdam.UI.Web.Models.VM;
 using System;
@@ -12,7 +13,7 @@ namespace BilgeAdam.UI.Web.Controllers
 {
     public class SupplierController : BaseController
     {
-
+        GenericRepository<Supplier> supplierrepo = new GenericRepository<Supplier>();
         public ActionResult Index()
         {
             //int year = DateTime.Now.Year;
@@ -22,7 +23,7 @@ namespace BilgeAdam.UI.Web.Controllers
 
             List<SupplierVM> model = new List<SupplierVM>();
 
-            List<Supplier> suppliers = SupplierManager.GetAllSuppliers();
+            List<Supplier> suppliers =supplierrepo.GetAll();
 
 
             foreach (var item in suppliers)
