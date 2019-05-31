@@ -13,7 +13,7 @@ namespace BilgeAdam.Data.ORM.Context
     {
         public BilgeAdamContext()
         {
-            Database.Connection.ConnectionString = "Server=.;Database=BilgeAdamdb;UID=sa;PWD=123";
+            Database.Connection.ConnectionString = "Server=.;Database=BilgeAdamdb5;UID=sa;PWD=123";
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
