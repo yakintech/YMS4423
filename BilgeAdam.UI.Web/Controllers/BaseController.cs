@@ -9,6 +9,15 @@ namespace BilgeAdam.UI.Web.Controllers
     [Authorize]
     public class BaseController : Controller
     {
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            ViewBag.UserName = HttpContext.User.Identity.Name;
+        }
+
+        protected override void OnActionExecuted(ActionExecutedContext filterContext)
+        {
+
+        }
 
     }
 }
