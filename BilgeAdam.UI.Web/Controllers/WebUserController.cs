@@ -13,7 +13,21 @@ namespace BilgeAdam.UI.Web.Controllers
     {
         public ActionResult Index()
         {
-            List<WebUser> webusers = WebUserManager.GetAllWebUsers();
+            List<WebUser> webusers = rpwebuser.GetAll();
+
+            //Adında 'A' geçen kullanıcılar
+            List<WebUser> webusers2 = rpwebuser.GetAllWithQueryable(q => q.Name.Contains('A'));
+
+
+            //Adı 'A' ile başlayan
+            List<WebUser> webusers3 = rpwebuser.GetAllWithQueryable(q => q.Name.StartsWith("A"));
+
+            //id si 10 dan büyük kullanıcılar
+            List<WebUser> webusers4 = rpwebuser.GetAllWithQueryable();
+
+            
+
+
 
             List<WebUserVM> model = new List<WebUserVM>();
 

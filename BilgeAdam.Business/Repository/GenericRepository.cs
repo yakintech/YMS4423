@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,6 +35,21 @@ namespace BilgeAdam.Business.Repository
         public List<TEntity> GetAll()
         {
             return dbSet.Where(q => q.IsDeleted == false).ToList();
+        }
+
+        public void Delete(int id)
+        {
+            var entity = dbSet.FirstOrDefault(q => q.ID == id);
+            entity.IsDeleted = true;
+            entity.DeleteDate = DateTime.Now;
+
+            context.SaveChanges();
+
+        }
+
+        public List<TEntity> GetAllWithQueryable(Expression<Func<TEntity, bool>> lambda=null)
+        {
+            return dbSet.Where(q => q.IsDeleted == false).Where(lambda).ToList();
         }
 
     }
