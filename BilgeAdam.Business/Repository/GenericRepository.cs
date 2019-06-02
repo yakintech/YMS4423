@@ -12,15 +12,18 @@ namespace BilgeAdam.Business.Repository
 {
     public class GenericRepository<TEntity> where TEntity : Base
     {
-        internal BilgeAdamContext context;
-        internal DbSet<TEntity> dbSet;
+         BilgeAdamContext db;
+         DbSet<TEntity> dbSet;
+        //db.Products = dbSet
+        //db = context
 
         public GenericRepository()
         {
-            context = new BilgeAdamContext();
-            this.dbSet = context.Set<TEntity>();
+            db = new BilgeAdamContext();
+            this.dbSet = db.Set<TEntity>();
         }
 
+       
         public void Add(TEntity entity)
         {
             entity.IsDeleted = false;
@@ -28,8 +31,7 @@ namespace BilgeAdam.Business.Repository
             entity.UpdateDate = DateTime.Now;
 
             dbSet.Add(entity);
-
-            context.SaveChanges();
+            db.SaveChanges();
         }
 
         public List<TEntity> GetAll()
@@ -43,13 +45,19 @@ namespace BilgeAdam.Business.Repository
             entity.IsDeleted = true;
             entity.DeleteDate = DateTime.Now;
 
-            context.SaveChanges();
+            db.SaveChanges();
 
         }
 
-        public List<TEntity> GetAllWithQueryable(Expression<Func<TEntity, bool>> lambda=null)
+        public List<TEntity> GetAllWithQueryable(Expression<Func<TEntity, bool>> lambda)
         {
             return dbSet.Where(q => q.IsDeleted == false).Where(lambda).ToList();
+        }
+
+        //tablo içerisindeki satır adetini dönen metot
+        public int GetCount()
+        {
+            return dbSet.Where(q => q.IsDeleted == false).Count();
         }
 
     }

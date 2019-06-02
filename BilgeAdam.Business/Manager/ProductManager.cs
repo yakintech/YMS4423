@@ -30,6 +30,8 @@ namespace BilgeAdam.Business.Manager
                 db.Products.Add(product);
 
                 db.SaveChanges();
+
+
             }
         }
 
