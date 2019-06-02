@@ -81,5 +81,24 @@ namespace BilgeAdam.UI.Web.Controllers
         {
             return "Merhaba dünya!";
         }
+
+
+
+
+
+        public JsonResult RemoveSupplier(int id)
+        {
+
+            supplierrepo.Delete(id);
+
+
+            return Json("İşlem başarılı",JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetAllSuppliers()
+        {
+            List<Supplier> data = supplierrepo.GetAll();
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
     }
 }

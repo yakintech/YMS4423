@@ -23,7 +23,6 @@ namespace BilgeAdam.UI.Web.Controllers
             rpcategory = new GenericRepository<Category>();
             rpwebuser = new GenericRepository<WebUser>();
 
-            rpcategory.Add
         }
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)

@@ -16,26 +16,26 @@ namespace BilgeAdam.UI.Web.Controllers
         GenericRepository<Product> rpproduct = new GenericRepository<Product>();
         public ActionResult Index()
         {
-            Product product = new Product();
-            product.ProductName = "asdasd";
+            //Product product = new Product();
+            //product.ProductName = "asdasd";
 
 
-            rpproduct.Add(product);
+            //rpproduct.Add(product);
 
-            //ürün listesini getir
-            rpproduct.GetAll();
+            ////ürün listesini getir
+            //rpproduct.GetAll();
 
-            //a harfi ile başlayan ürünler
-            rpproduct.GetAll().Where(q => q.ProductName.StartsWith("A")).ToList();
+            ////a harfi ile başlayan ürünler
+            //rpproduct.GetAll().Where(q => q.ProductName.StartsWith("A")).ToList();
 
-            rpproduct.GetAllWithQueryable(q => q.ProductName.StartsWith("A"));
+            //rpproduct.GetAllWithQueryable(q => q.ProductName.StartsWith("A"));
 
-            //içerisinde a geçen ürünler
+            ////içerisinde a geçen ürünler
 
-            //a ile biten ürünler
+            ////a ile biten ürünler
 
-            //fiyatı  500 den büyük ürünler
-            rpproduct.GetAllWithQueryable(q => q.UnitPrice > 500);
+            ////fiyatı  500 den büyük ürünler
+            //rpproduct.GetAllWithQueryable(q => q.UnitPrice > 500);
 
             return View();
         }
