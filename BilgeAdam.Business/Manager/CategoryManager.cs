@@ -31,5 +31,19 @@ namespace BilgeAdam.Business.Manager
 
             }
         }
-    }
+        public static void AddCategory(Category category)
+        {
+            using (BilgeAdamContext db = new BilgeAdamContext())
+            {
+                category.AddDate = DateTime.Now;
+                category.IsDeleted = false;
+                category.UpdateDate = DateTime.Now;
+
+                db.Categories.Add(category);
+
+                db.SaveChanges();
+
+
+            }
+        }
 }
