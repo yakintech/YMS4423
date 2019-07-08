@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+@model BilgeAdam.UI.Web.Models.VM.SupplierVM
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateSupplier</title>
+</head>
+<body>
+    <div>
+        @Html.ValidationSummary()
+        <form action="/Supplier/UpdateSupplier" method="post">
+            <div>
+                @Html.LabelFor(q => q.SirketAd)
+                @Html.TextBoxFor(q => q.SirketAd)
+            </div>
+            <div>
+                @Html.LabelFor(q => q.Aciklama)
+                @Html.TextAreaFor(q => q.Aciklama)
+            </div>
+            <div>
+                <input type="submit" name="name" value="Kayıt" />
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

@@ -2,6 +2,7 @@
 using BilgeAdam.Data.ORM.Entity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,6 +45,16 @@ namespace BilgeAdam.Business.Manager
                 }
 
             }
+        }
+
+        public static void UpdateSupplier(Supplier supplier)
+        {
+            using (BilgeAdamContext db = new BilgeAdamContext())
+            {
+                db.Entry(supplier).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+
         }
     }
 }

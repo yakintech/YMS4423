@@ -76,6 +76,12 @@ namespace BilgeAdam.UI.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult UpdateSupplier(Supplier supplier)
+        {
+            SupplierManager.UpdateSupplier(supplier);
+            return RedirectToAction("Index");
+        }
+
 
         public string Merhaba()
         {
